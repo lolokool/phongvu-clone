@@ -12,3 +12,17 @@
   position: absolute;
   bottom: 88px;
 }
+.swiper-button-prev,
+.swiper-button-next {
+  color: #333333;
+  background-color: #b2acac;
+  width: 40px;
+  border-radius: 20px 0px 0px 20px;
+}
+.swiper-button-prev {
+  border-radius: 0px 20px 20px 0px;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 18px;
+}

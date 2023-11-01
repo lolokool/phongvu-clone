@@ -1125,3 +1125,116 @@ export const DealPro = [
     saleUrl: "",
   },
 ];
+
+export const Featured = [
+  {
+    title: "Danh mục nổi bật",
+    content: [
+      {
+        image:
+          "https://lh3.googleusercontent.com/wOhcPJSPsA2l653-KPjmfodiem9y3NS6Mji6SZhkNCKsuyHK9Z3x0X-2l8gikfPI5n1DX0Fg9bBCHsOI0ACZD7n20XHN4e72=rw",
+        description: "Laptop",
+      },
+      {
+        image:
+          "https://lh3.googleusercontent.com/-kvGX205lg2FwjlevgAws0VOVKjDJVkZLuzdUzV-tFWi0fxs7rz2rd3ZvzQ1GLBs2j67HwrTqM1KdkfekyWPz9olDW-quolzlA=rw",
+        description: "Macbook",
+      },
+      {
+        image:
+          "https://lh3.googleusercontent.com/AsrwiaAHgA9NcpFVm8hBkOkG3Chv2XzObdRlzJStQ5rTTI7YSzlGo2_fl6wwpWLJKkgv_aHOEiN8UXagLUHwq3nDYzEwFBw=rw",
+        description: "PC",
+      },
+      {
+        image:
+          "https://lh3.googleusercontent.com/2701fTP9z5BT0Jn40Jc6qiXij824-WxAM6wavqFHvf7tp5WLkpJwh7Kn6TsesgatH_avVdZMkVtu8qfpZ3jfkWDsIeXYKg-L=rw",
+        description: "Card màn hình",
+      },
+      {
+        image:
+          "https://lh3.googleusercontent.com/BWmrmeD9ZNoYqrCztPIpHCwFbKB6JtEOjC53KDuCEDSH2nVakRhjhBhiftXVl_ugvOerBhgCaBZanc2cC1ihcUU2DZw8QEfN=rw",
+        description: "CPU",
+      },
+      {
+        image:
+          "https://lh3.googleusercontent.com/4Lt6ipknHdhytA3yBKGstu2R75Ip-RCpIng6rmnsOT6bHR_Nq0BiIEXI81-kV4otHS5epUEz8YSoIYg5DdeVCiVZ9UguiWsk=rw",
+        description: "Ram",
+      },
+      {
+        image:
+          "https://lh3.googleusercontent.com/stw8R9S4NPD2_WXwwxRbfVpm076f53ZQbnJ1gtFucrv6nWkcERiCfg7BJ2_AQv4zY8oIlO-SipQWOK7Uc8UvXw9pnuBN6bs=rw",
+        description: "Ổ cứng",
+      },
+      {
+        image:
+          "https://lh3.googleusercontent.com/-nL9SbHavkgYwyHGTXf_SntzHdFxxjLIQtoSeI38XxxVbkXoIo57oWTG90OFLdcnDK5BWL4VRUChoS4ZTKDnpdcgHqxtgE4=rw",
+        description: "Điện máy - Điện gia dụng",
+      },
+      {
+        image:
+          "https://lh3.googleusercontent.com/rg0MMQFfyjZzGjsmcJrpqQx7Zp8c7KDPPMX6yUtafXTn9qgSMaA9lavKd8q1vz1nfxYgnjbjfHLmFsw7IxLfkupM83NBzYY=rw",
+        description: "Màn hình",
+      },
+      {
+        image:
+          "https://lh3.googleusercontent.com/eIAVPQdJ20jpuDYypRQSF5zcugh6q6V4_04jopbdc5gdvQUo11j6z_1K9NGV2DNSlzofo2ztZaKZuZ0ijKDUvUExrOZuZTQ=rw",
+        description: "Chuột máy tính",
+      },
+    ],
+  },
+  {
+    title: "",
+    content: [
+      {
+        image:
+          "https://lh3.googleusercontent.com/x-UKqLN2rYJIb365dmAUfqR8T09NwI0gzqnUJsCIJsaaFUGSsWWzQoxY6e1FjghDm8E7kR9SR0jySLL6hBfgh2msMi2vJ2mp=rw",
+        description: "Bàn phím",
+      },
+      {
+        image:
+          "https://lh3.googleusercontent.com/lmY5CJ2nNtJYXqb5CgtJ0z6EmY5ZS3x06oQt6Aneh8KEdnTCYY2cdjsAQDD5gFllIj8f84DZP94AkvhnZ1pj6nysi1uwsXM=rw",
+        description: "Iphone",
+      },
+      {
+        image:
+          "https://lh3.googleusercontent.com/icxPo1Rqyjc1XkfEpTq6NJx3p1mFclraPE3mp3uxCUDBoHXuhbq8WMGMiwE3L4czehocmdRCuSyBF9QOU4DQhz30eIjekvNm=rw",
+        description: "Ipad",
+      },
+      {
+        image:
+          "https://lh3.googleusercontent.com/S1yuYdyvEMVRPWQqTV9wVhhGLE2oa8Yc1JhT2hjDOFFLb-QeO9YFxNRIb7IV2MmeFCSa0SwE4bj0SiNvsX4MD7t4ZAiIWR15tA=rw",
+        description: "Loa",
+      },
+      {
+        image:
+          "https://lh3.googleusercontent.com/c5bndXV3StqApjCkeie7NJwmm0CINqli4c-ojXm0sYgybzkrxUlvQcc0bEEkWsWA36pEUs3rAPqSrujbb8MuR78F0chH0xXS=rw",
+        description: "Phụ kiện chung",
+      },
+      {
+        image:
+          "https://lh3.googleusercontent.com/hKlLfslwlu8yhXnGev18Nhv2HJ8nbtj-irvFZ41n7uCGyut1eZ-ZPOYFM7pUmdC3fC5Po2BzdSk89VShSwzSnk0sgwUGV50=rw",
+        description: "Điện thoại",
+      },
+      {
+        image:
+          "https://lh3.googleusercontent.com/SnA2s4Q1SidX0eSBKUtlrTV3BkCHtWwJmwu5EmrPPjSLbZBce96IYn4ZYYaUUTbe2HVn6pnJbl-2zWcQUfFBRMW_2aWNXpk5=rw",
+        description: "Máy tính bảng",
+      },
+      {
+        image:
+          "https://lh3.googleusercontent.com/NlL5KvzewP3NBuHU_LswDZWgDKo6GACf_eQE4pqAbhafnxUO9RycDE6lYS0O8tMibJhhsSh5Hm7lU-M0l1tVuTGHlnAKTHG0=rw",
+        description: "Máy in",
+      },
+      {
+        image:
+          "https://lh3.googleusercontent.com/OLP0JCRtpyOy8Ae1_UTZFFlNU5gusTpxYOcfFewv5TZ5-gym3n0CBI0A9CFbzmUWHQK-krt26iBy5C7txcnf9TXzoZhEt1Ci=rw",
+        description: "Máy lạnh",
+      },
+      {
+        image:
+          "https://lh3.googleusercontent.com/nQEoUshCFBITCkHdHmHVx3-Hjhn_Y6Tjvh7jDfEVDQ-tind2G44ebk3shJI9GrQzGW29BK2B-qPXEB2AZeWq8DfA8LR0IlY=rw",
+        description: "TV",
+      },
+    ],
+  },
+];

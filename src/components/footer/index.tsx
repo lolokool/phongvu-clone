@@ -21,12 +21,12 @@ const payMenthod = [
 
 const FooterComponent = () => {
   return (
-    <div className="mt-137">
+    <div className="pt-5 border-t-[rgb(20,53,195)] border-t-[3px] ">
       <div className=" max-w-main1 text-color02 mx-auto justify-center ">
-        <div className="grid grid-cols-5 text-12 px-16 mb-2.5 gap-3">
+        <div className="grid grid-cols-5 text-12 px-4 mb-[2.5px] gap-3">
           {FooterData.map((item, index) => (
             <div key={index}>
-              <h2 className="font-bold text-14 mb-2.5">{item.title}</h2>
+              <h2 className="font-bold text-14 mb-[2.5px]">{item.title}</h2>
               <div>
                 {item.child.map((a, i) => (
                   <a className="text-12 flex flex-col" key={i} href={a.url}>
@@ -37,7 +37,7 @@ const FooterComponent = () => {
             </div>
           ))}
           <div>
-            <h2 className="mb-2.5 text-sm font-bold">Cộng đồng Phong Vũ</h2>
+            <h2 className="mb-[2.5px] text-sm font-bold">Cộng đồng Phong Vũ</h2>
             <div>
               <span>Gọi mua hàng (miễn phí) </span>
               <span>
@@ -57,7 +57,7 @@ const FooterComponent = () => {
           </div>
           <div>
             <div>
-              <h2 className="mb-2.5 text-sm font-bold">Email liên hệ</h2>
+              <h2 className="mb-[2.5px] text-sm font-bold">Email liên hệ</h2>
             </div>
             <p>Hỗ trợ Khách hàng:</p>
 
@@ -72,16 +72,16 @@ const FooterComponent = () => {
         </div>
       </div>
       <div className=" max-w-main1 text-color02 mx-auto justify-center">
-        <div className="flex px-16 mb-2.5 w-1264">
+        <div className="flex px-4 mb-[2.5px] w-1264">
           <div className="basis-1/4">
             <div>
-              <div className="mb-2.5 text-sm font-bold">
+              <div className="mb-[2.5px] text-sm font-bold">
                 Phương thức thanh toán
               </div>
               <div className="flex">
                 {payMenthod.map((item: any, index: any) => (
                   <div className="w-60 h-60 text-12 " key={index}>
-                    <img src={item.img} className="w-30 " />
+                    <img src={item.img} className="w-[30px] " />
                     {item.title}
                   </div>
                 ))}
@@ -99,10 +99,10 @@ const FooterComponent = () => {
           </div>
         </div>
       </div>
-      <div className="w-full bg-color04 pt-30 pb-25 ">
-        <div className="grid grid-cols-3  text-12 w-1264 m-auto ">
+      <div className="w-full bg-color04 pt-[30px] pb-6 ">
+        <div className="grid grid-cols-3  text-12 w-1264 m-auto gap-4 ">
           <div className="1">
-            <h2 className="font-bold">
+            <h2 className="font-bold mb-[15px]">
               CÔNG TY CỔ PHẦN THƯƠNG MẠI - DỊCH VỤ PHONG VŨ
             </h2>
             © 1997 - 2020 Công Ty Cổ Phần Thương Mại - Dịch Vụ Phong Vũ Giấy
