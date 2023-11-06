@@ -19,14 +19,6 @@ const Search = () => {
   const [status, setStatus] = useState(Status.search);
   const [searchValue, setSearchValue] = useState("");
 
-  //   useEffect(() => {
-  //     if (searchValue) {
-  //       setIsModalVisible(true);
-  //     } else {
-  //       setIsModalVisible(false);
-  //     }
-  //   }, [searchValue]);
-
   const handleSearchFocus = () => {
     setStatus(Status.search);
     setIsModalVisible(true);

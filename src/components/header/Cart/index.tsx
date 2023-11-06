@@ -62,7 +62,7 @@ const Cart = () => {
                   <div className="text-14">
                     Tổng tiền ({itemCount}) sản phẩm
                   </div>
-                  <div className="text-18 font-bold">
+                  <div className="text-18 font-bold text-[#1435C3]">
                     {formatCurrency(Number(`${totalPrice}`))}
                   </div>
                 </div>

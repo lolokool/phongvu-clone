@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Menu from "../../Svgs/Menu";
 import { useEffect, useState } from "react";
 import DropDown from "../../../pages/home/components/Dropdown";
+import { createPortal } from "react-dom";
 
 const Logo = () => {
   const [isAtTop, setIsAtTop] = useState(true);
@@ -25,7 +26,7 @@ const Logo = () => {
   const handleShowDropDown = () => {
     setShowDropDown(true);
   };
-  const handleRemoDropDown = () => {
+  const handleRemoveDropDown = () => {
     setShowDropDown(false);
   };
   return (
@@ -44,12 +45,14 @@ const Logo = () => {
         </Link>
       ) : (
         <div className="px-2 flex flex-row">
-          <div className="w-[35px] h-[35px] mr-4 ml-2 ">
-            <img
-              src="https://shopfront-cdn.tekoapis.com/static/phongvu/logo.svg"
-              alt=""
-            />
-          </div>
+          <Link to="/">
+            <div className="w-[35px] h-[35px] mr-4 ml-2 ">
+              <img
+                src="https://shopfront-cdn.tekoapis.com/static/phongvu/logo.svg"
+                alt=""
+              />
+            </div>
+          </Link>
           <div
             className="flex justify-center items-center border border-[#e0e0e0] rounded px-3 py-2 hover:bg-[#f3f0f0]"
             onClick={handleShowDropDown}
@@ -59,16 +62,18 @@ const Logo = () => {
           </div>
         </div>
       )}
-      {showDropDown && (
-        <div className="">
-          <div
-            className=" bg-white top-[120%] left-[20%] absolute z-50 "
-            onMouseLeave={handleRemoDropDown}
-          >
-            <DropDown />
-          </div>
-        </div>
-      )}
+      {showDropDown &&
+        createPortal(
+          <div className="bg-[#0000003d] fixed top-[100px] bottom-0 left-0 right-0 z-50">
+            <div
+              className="bg-white fixed top-[10%] left-[20%] rounded"
+              onClick={handleRemoveDropDown}
+            >
+              <DropDown />
+            </div>
+          </div>,
+          document.body
+        )}
     </>
   );
 };

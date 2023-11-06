@@ -5,11 +5,11 @@ import Minus from "../../components/Svgs/Minus";
 import RightArrow from "../../components/Svgs/RightArrow";
 import Layout from "../../components/layouts";
 import { formatCurrency } from "../../utils/format-money";
+import { dataApi } from "../home";
 
 const MyCart = () => {
   const {
     cartItems,
-    totalPrice,
     increaseCount,
     decreaseCount,
     removeCartItem,
@@ -18,7 +18,43 @@ const MyCart = () => {
   } = useShoppingContext();
   console.log("cartItems", cartItems);
 
-  const [status, setStatus] = useState("checked");
+  const [selectAllChecked, setSelectAllChecked] = useState(false);
+
+  const [selectedItems, setSelectedItems] = useState<
+    (dataApi & { count: number })[]
+  >([]);
+
+  const handleItemSelection = (event: any, selectedItem: any) => {
+    const selectedItemId = selectedItem.skuId;
+    const isChecked = event.target.checked;
+
+    if (isChecked) {
+      // Thêm mục đã chọn vào danh sách
+      setSelectedItems((prevSelectedItems) => [
+        ...prevSelectedItems,
+        selectedItem,
+      ]);
+    } else {
+      // Loại bỏ mục đã chọn khỏi danh sách
+      setSelectedItems((prevSelectedItems) =>
+        prevSelectedItems.filter((item) => item.skuId !== selectedItemId)
+      );
+    }
+  };
+
+  const handleSelectAll = () => {
+    setSelectAllChecked(!selectAllChecked);
+    const updatedSelectedItems = cartItems.map((item) => {
+      return {
+        ...item,
+        count: selectAllChecked ? 0 : item.count,
+      };
+    });
+    setSelectedItems(updatedSelectedItems);
+    handleItemSelection;
+  };
+
+  //...
 
   return (
     <Layout>
@@ -61,7 +97,11 @@ const MyCart = () => {
             <div className="flex gap-2">
               <div className="bg-white w-[67%] mr-4 rounded">
                 <div className="flex justify-center items-center p-4 border-b border-[rgb(224,224,224)]  text-[#333333]">
-                  <input type="checkbox" />
+                  <input
+                    type="checkbox"
+                    checked={selectAllChecked}
+                    onChange={handleSelectAll}
+                  />
                   <div className="w-[60%] text-[15px] font-bold text-center ">
                     CÔNG TY CỔ PHẦN THƯƠNG MẠI DỊCH VỤ PHONG VŨ
                   </div>
@@ -77,9 +117,14 @@ const MyCart = () => {
                 </div>
                 {cartItems.map((e) => (
                   <div className="flex justify-center items-center p-4 flex-col">
+                    {/*  */}
                     <div className="flex justify-center items-center w-full">
                       <div className=" flex w-[60%] space-x-3">
-                        <input type="checkbox" />
+                        <input
+                          type="checkbox"
+                          value={e.skuId}
+                          onChange={(event) => handleItemSelection(event, e)}
+                        />
                         <img
                           className="w-[80px] h-[80px] border border-[rgb(224,224,224)]"
                           src={e.image}
@@ -131,6 +176,7 @@ const MyCart = () => {
                         </p>
                       </div>
                     </div>
+                    {/*  */}
                     <div className="w-full ">
                       <div className="w-[3%]"></div>
                       <div className="w-[97%] bg-[rgb(243,243,247)] my-3 flex justify-between items-center py-2 rounded">
@@ -168,12 +214,29 @@ const MyCart = () => {
                   <h3 className="mb-2 font-bold">Thanh toán</h3>
                   <div className="flex justify-between">
                     <div>Tổng tạm tính</div>
-                    <div>{formatCurrency(Number(`${totalPrice}`))}</div>
+                    <div>
+                      {formatCurrency(
+                        selectedItems.reduce(
+                          (total, item) =>
+                            total + item.count * Number(item.latestPrice),
+                          0
+                        )
+                      )}
+                    </div>
                   </div>
                   <div className="flex justify-between">
                     <div>Thành tiền</div>
-                    <div className="text-right">
-                      <div>{formatCurrency(Number(`${totalPrice}`))}</div>
+                    <div className="text-right text-[#1435C3]">
+                      <div>
+                        {" "}
+                        {formatCurrency(
+                          selectedItems.reduce(
+                            (total, item) =>
+                              total + item.count * Number(item.latestPrice),
+                            0
+                          )
+                        )}
+                      </div>
                       <div className="text-12 text-[#82869E]">
                         (Đã bao gồm VAT)
                       </div>

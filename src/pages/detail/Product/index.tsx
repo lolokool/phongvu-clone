@@ -25,6 +25,7 @@ const Product = () => {
       setDetailPr(matchedPr);
     }
   }, [canonical]);
+  console.log("as", detailPr);
   const [targetImage, setTargetImage] = useState(images[0]);
   return (
     <div className="flex-1 bg-white max-w-75.6">

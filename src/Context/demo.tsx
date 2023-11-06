@@ -6,6 +6,9 @@ import {
   useState,
 } from "react";
 import { dataApi } from "../pages/home";
+import "react-alert-confirm/lib/style.css";
+import AlertConfirm from "react-alert-confirm";
+
 import { getChonquaAPIInfo } from "../api/get-products.api";
 
 type Props = {
@@ -37,7 +40,6 @@ export const useShoppingContext = () => {
 
 export const ShoppingContextProvider = ({ children }: Props) => {
   const [detailData, setDetailData] = useState<dataApi[]>([]);
-
   const [cartItems, setCartItems] = useState<CartItem[]>(
     JSON.parse(localStorage.getItem("cartItems") ?? "")
   );
@@ -61,6 +63,7 @@ export const ShoppingContextProvider = ({ children }: Props) => {
           return item;
         }
       });
+      localStorage.setItem("cartItems", JSON.stringify(newItems));
       setCartItems(newItems);
     }
   };
@@ -79,6 +82,7 @@ export const ShoppingContextProvider = ({ children }: Props) => {
             return item;
           }
         });
+        localStorage.setItem("cartItems", JSON.stringify(newItems));
         setCartItems(newItems);
       }
     }
@@ -107,19 +111,36 @@ export const ShoppingContextProvider = ({ children }: Props) => {
 
   const removeCartItem = (skuId: number) => {
     console.log("remove", skuId);
-    const currentCartItemIndex = cartItems.findIndex(
-      (item) => item.skuId === skuId
-    );
-
-    const newItems = [...cartItems];
-    newItems.splice(currentCartItemIndex, 1);
-    alert("Xóa sản phẩm này??");
-    setCartItems(newItems);
+    AlertConfirm({
+      title: "Are you sure?",
+      desc: "Xóa sản phẩm này",
+      onOk: () => {
+        const currentCartItemIndex = cartItems.findIndex(
+          (item) => item.skuId === skuId
+        );
+        const newItems = [...cartItems];
+        newItems.splice(currentCartItemIndex, 1);
+        localStorage.setItem("cartItems", JSON.stringify(newItems));
+        setCartItems(newItems);
+      },
+      onCancel: () => {
+        console.log("cancel");
+      },
+    });
   };
 
   const clearCart = () => {
-    alert("Bạn chắc chắn muốn xóa");
-    setCartItems([]);
+    AlertConfirm({
+      title: "Are you sure?",
+      desc: "Xóa tất cả sản phẩm trong giỏ hàng",
+      onOk: () => {
+        console.log("ok");
+        setCartItems([]);
+      },
+      onCancel: () => {
+        console.log("cancel");
+      },
+    });
   };
   useEffect(() => {
     getChonquaAPIInfo().then((data) => {
