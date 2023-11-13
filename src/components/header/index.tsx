@@ -1,5 +1,5 @@
 import Maketing from "./Maketing";
-import Login from "./LoginRegister";
+import UserInfo from "./LoginRegister";
 import Cart from "./Cart";
 import Notification from "./Notify";
 import Logo from "./Logo";
@@ -16,7 +16,7 @@ const HeaderComponent = () => {
           <div className=" flex justify-center  items-center">
             <Logo />
             <Search />
-            <Login />
+            <UserInfo />
             <Notification />
             <Cart />
           </div>

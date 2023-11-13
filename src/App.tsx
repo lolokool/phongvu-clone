@@ -1,13 +1,15 @@
 import "./App.css";
 import PublicRoutes from "./router";
-
 import { ShoppingContextProvider } from "./Context/demo";
+import AuthProvider from "./Context/AuthContext";
 
 function App() {
   return (
-    <ShoppingContextProvider>
-      <PublicRoutes />
-    </ShoppingContextProvider>
+    <AuthProvider>
+      <ShoppingContextProvider>
+        <PublicRoutes />
+      </ShoppingContextProvider>
+    </AuthProvider>
   );
 }
 

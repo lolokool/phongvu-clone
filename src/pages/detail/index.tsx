@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom";
 import Layout from "../../components/layouts";
 import ScrollToTop from "../../utils/scrollToTop";
 import DetailPR from "./DetailPr";
@@ -6,6 +7,8 @@ import Seller from "./Seller";
 import Suggest from "./SuggestPr";
 
 const Detail = () => {
+  const location = useLocation();
+  console.log("asdaddsd", location);
   return (
     <Layout>
       <ScrollToTop />

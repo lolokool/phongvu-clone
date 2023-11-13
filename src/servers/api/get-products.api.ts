@@ -1,5 +1,5 @@
-import { chonqua } from "../mockdata/chon-qua-dung-gu";
-import { pickNessInfo } from "../utils/get-product-info";
+import { chonqua } from "../../mockdata/chon-qua-dung-gu";
+import { pickNessInfo } from "../../utils/get-product-info";
 
 const delay = () => {
   return new Promise((resolve) => {

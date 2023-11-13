@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "../pages/home";
 import Detail from "../pages/detail";
 import MyCart from "../pages/MyCart";
-import Register from "../pages/Login";
+import Register from "../pages/Register";
+import Login from "../pages/Login";
 
 const PublicRoutes = () => {
   return (
@@ -11,7 +12,8 @@ const PublicRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/:canonical" element={<Detail />} />
         <Route path="/cart" element={<MyCart />} />
-        <Route path="/login" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </Router>
   );

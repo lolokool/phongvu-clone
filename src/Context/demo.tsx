@@ -9,7 +9,7 @@ import { dataApi } from "../pages/home";
 import "react-alert-confirm/lib/style.css";
 import AlertConfirm from "react-alert-confirm";
 
-import { getChonquaAPIInfo } from "../api/get-products.api";
+import { getChonquaAPIInfo } from "../servers/api/get-products.api";
 
 type Props = {
   children: ReactNode;
@@ -41,7 +41,7 @@ export const useShoppingContext = () => {
 export const ShoppingContextProvider = ({ children }: Props) => {
   const [detailData, setDetailData] = useState<dataApi[]>([]);
   const [cartItems, setCartItems] = useState<CartItem[]>(
-    JSON.parse(localStorage.getItem("cartItems") ?? "")
+    JSON.parse(localStorage.getItem("cartItems") || "[]")
   );
   const itemCount = cartItems.length;
 
@@ -106,7 +106,6 @@ export const ShoppingContextProvider = ({ children }: Props) => {
       const newItem = { ...product, count: 1 };
       setCartItems([...cartItems, newItem]);
     }
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
   };
 
   const removeCartItem = (skuId: number) => {
